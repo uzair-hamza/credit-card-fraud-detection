@@ -1,0 +1,39 @@
+Test set: 56,962 transactions, 98 fraud (0.1720%)
+All-legit baseline accuracy: 0.9983 (it catches 0 frauds)
+
+== logistic_regression ==
+Accuracy:  0.9755
+Precision (fraud): 0.0610
+Recall (fraud):    0.9184
+F1 (fraud):        0.1144
+AUC-PR (fraud):    0.7159
+Confusion matrix [[TN, FP], [FN, TP]]:
+[[55478, 1386], [8, 90]]
+              precision    recall  f1-score   support
+
+           0       1.00      0.98      0.99     56864
+           1       0.06      0.92      0.11        98
+
+    accuracy                           0.98     56962
+   macro avg       0.53      0.95      0.55     56962
+weighted avg       1.00      0.98      0.99     56962
+
+
+== random_forest ==
+Accuracy:  0.9995
+Precision (fraud): 0.9259
+Recall (fraud):    0.7653
+F1 (fraud):        0.8380
+AUC-PR (fraud):    0.8533
+Confusion matrix [[TN, FP], [FN, TP]]:
+[[56858, 6], [23, 75]]
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00     56864
+           1       0.93      0.77      0.84        98
+
+    accuracy                           1.00     56962
+   macro avg       0.96      0.88      0.92     56962
+weighted avg       1.00      1.00      1.00     56962
+
+Confusion matrix plot: best model by fraud F1 (random_forest) -> results/confusion_matrix.png
